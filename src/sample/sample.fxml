@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane prefHeight="275.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <center>
+        <GridPane alignment="center" hgap="10" prefHeight="0.0" prefWidth="0.0" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints/>
+            </rowConstraints>
+            <Button mnemonicParsing="false" onAction="#click" text="Button"/>
+        </GridPane>
+    </center>
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <Menu mnemonicParsing="false" text="Файл">
+                <MenuItem mnemonicParsing="false" text="Новый"/>
+                <MenuItem mnemonicParsing="false" text="Открыть"/>
+                <SeparatorMenuItem mnemonicParsing="false"/>
+                <MenuItem mnemonicParsing="false" text="Сохранить"/>
+                <MenuItem mnemonicParsing="false" text="Сохранить как..."/>
+                <SeparatorMenuItem mnemonicParsing="false"/>
+                <MenuItem mnemonicParsing="false" text="Закрыть"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Правка">
+                <MenuItem mnemonicParsing="false" text="Копировать"/>
+                <MenuItem mnemonicParsing="false" text="Вставить"/>
+                <MenuItem mnemonicParsing="false" text="Вырезать"/>
+                <MenuItem mnemonicParsing="false" text="Отменить"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Анализ"/>
+        </MenuBar>
+    </top>
+</BorderPane>
