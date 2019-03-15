@@ -8,38 +8,45 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="ap" prefHeight="275.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.Controller">
+<BorderPane fx:id="ap" prefHeight="275.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.Controller">
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <Menu mnemonicParsing="false" text="Файл">
-                <MenuItem mnemonicParsing="false" text="Новый"/>
-                <MenuItem mnemonicParsing="false" onAction="#menuOpenFile" text="Открыть..."/>
-                <SeparatorMenuItem mnemonicParsing="false"/>
-                <MenuItem mnemonicParsing="false" text="Сохранить"/>
-                <MenuItem mnemonicParsing="false" text="Сохранить как..."/>
-                <SeparatorMenuItem mnemonicParsing="false"/>
-                <MenuItem mnemonicParsing="false" onAction="#menuClose" text="Закрыть"/>
+                <MenuItem mnemonicParsing="false" onAction="#menuNew" text="Новый" />
+                <MenuItem mnemonicParsing="false" onAction="#menuOpenFile" text="Открыть..." />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" onAction="#menuSave" text="Сохранить" />
+                <MenuItem mnemonicParsing="false" onAction="#menuSaveAs" text="Сохранить как..." />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" onAction="#menuClose" text="Закрыть" />
             </Menu>
             <Menu mnemonicParsing="false" text="Правка">
-                <MenuItem mnemonicParsing="false" onAction="#menuCopy" text="Копировать"/>
-                <MenuItem mnemonicParsing="false" onAction="#menuPaste" text="Вставить"/>
-                <MenuItem mnemonicParsing="false" onAction="#menuCut" text="Вырезать"/>
-                <MenuItem mnemonicParsing="false" onAction="#menuUndo" text="Отменить"/>
+                <MenuItem mnemonicParsing="false" onAction="#menuCopy" text="Копировать" />
+                <MenuItem mnemonicParsing="false" onAction="#menuPaste" text="Вставить" />
+                <MenuItem mnemonicParsing="false" onAction="#menuCut" text="Вырезать" />
+                <MenuItem mnemonicParsing="false" onAction="#menuUndo" text="Отменить" />
             </Menu>
-            <Menu mnemonicParsing="false" text="Анализ"/>
+            <Menu mnemonicParsing="false" text="Анализ">
+               <MenuItem mnemonicParsing="false" onAction="#menuAnalyze" text="Синтаксический анализ" />
+            </Menu>
         </MenuBar>
     </top>
     <center>
-        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0"
-                   BorderPane.alignment="CENTER">
+        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                <TextArea fx:id="editor" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+                <TextArea fx:id="editor" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Monospace 821 BT" size="15.0" />
+               </font></TextArea>
             </AnchorPane>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0"
-                        SplitPane.resizableWithParent="false"/>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" SplitPane.resizableWithParent="false">
+               <TextArea fx:id="out" editable="false" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Monospace 821 BT" size="15.0" />
+               </font></TextArea>
+            </AnchorPane>
         </SplitPane>
     </center>
 </BorderPane>
