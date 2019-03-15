@@ -6,9 +6,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import org.antlr.v4.runtime.CharStream;
-import org.antlr.v4.runtime.CharStreams;
-import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.io.File;
@@ -115,7 +113,19 @@ public class Controller {
         ShiftLexer shiftLexer = new ShiftLexer(charStream);
         CommonTokenStream commonTokenStream = new CommonTokenStream(shiftLexer);
         ShiftParser shiftParser = new ShiftParser(commonTokenStream);
+        shiftParser.addErrorListener(new ShiftErrorListener());
+        shiftParser.setBuildParseTree(true);
         ParseTree parseTree = shiftParser.statementseq();
-        out.setText(parseTree.toStringTree(shiftParser));
+        String tree = new PrintShiftVisitor().visit(parseTree);
+        out.setText(out.getText() + tree);
+    }
+
+    public class ShiftErrorListener extends BaseErrorListener {
+        @Override
+        public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol, int line, int charPositionInLine, String msg, RecognitionException e) {
+            String message = line + ":" + charPositionInLine + " error: " + msg + "\n\n";
+            out.setText(message);
+            super.syntaxError(recognizer, offendingSymbol, line, charPositionInLine, msg, e);
+        }
     }
 }

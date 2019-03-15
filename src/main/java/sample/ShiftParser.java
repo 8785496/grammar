@@ -1,5 +1,5 @@
-package main.java.sample;
 // Generated from Shift.g4 by ANTLR 4.7.1
+package main.java.sample;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -17,9 +17,9 @@ public class ShiftParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, Booleanliteral=3, Identifer=4, Identifernodigit=5, Integerliteral=6, 
-		Floatingliteral=7, Nonzerodigit=8, Digit=9, Stringliteral=10, Characterliteral=11, 
-		Whitespace=12;
+		T__0=1, T__1=2, T__2=3, Booleanliteral=4, Identifer=5, Identifernodigit=6, 
+		Integerliteral=7, Floatingliteral=8, Nonzerodigit=9, Digit=10, Stringliteral=11, 
+		Characterliteral=12, Whitespace=13;
 	public static final int
 		RULE_statementseq = 0, RULE_statement = 1, RULE_shiftexpression = 2, RULE_expression = 3, 
 		RULE_literal = 4, RULE_identifer = 5;
@@ -29,12 +29,12 @@ public class ShiftParser extends Parser {
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, "';'", "'<<'"
+		null, "';'", "'cout'", "'<<'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, null, "Booleanliteral", "Identifer", "Identifernodigit", "Integerliteral", 
-		"Floatingliteral", "Nonzerodigit", "Digit", "Stringliteral", "Characterliteral", 
-		"Whitespace"
+		null, null, null, null, "Booleanliteral", "Identifer", "Identifernodigit", 
+		"Integerliteral", "Floatingliteral", "Nonzerodigit", "Digit", "Stringliteral", 
+		"Characterliteral", "Whitespace"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -97,12 +97,9 @@ public class ShiftParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_statementseq; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ShiftListener ) ((ShiftListener)listener).enterStatementseq(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ShiftListener ) ((ShiftListener)listener).exitStatementseq(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ShiftVisitor ) return ((ShiftVisitor<? extends T>)visitor).visitStatementseq(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -129,7 +126,7 @@ public class ShiftParser extends Parser {
 			setState(19);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,0,_ctx);
-			while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
+			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
@@ -170,12 +167,9 @@ public class ShiftParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_statement; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ShiftListener ) ((ShiftListener)listener).enterStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ShiftListener ) ((ShiftListener)listener).exitStatement(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ShiftVisitor ) return ((ShiftVisitor<? extends T>)visitor).visitStatement(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -193,16 +187,11 @@ public class ShiftParser extends Parser {
 				match(T__0);
 				}
 				break;
-			case Booleanliteral:
-			case Identifer:
-			case Integerliteral:
-			case Floatingliteral:
-			case Stringliteral:
-			case Characterliteral:
+			case T__1:
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(23);
-				shiftexpression(0);
+				shiftexpression();
 				setState(24);
 				match(T__0);
 				}
@@ -223,70 +212,48 @@ public class ShiftParser extends Parser {
 	}
 
 	public static class ShiftexpressionContext extends ParserRuleContext {
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
 		}
-		public ShiftexpressionContext shiftexpression() {
-			return getRuleContext(ShiftexpressionContext.class,0);
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
 		}
 		public ShiftexpressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_shiftexpression; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ShiftListener ) ((ShiftListener)listener).enterShiftexpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ShiftListener ) ((ShiftListener)listener).exitShiftexpression(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ShiftVisitor ) return ((ShiftVisitor<? extends T>)visitor).visitShiftexpression(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final ShiftexpressionContext shiftexpression() throws RecognitionException {
-		return shiftexpression(0);
-	}
-
-	private ShiftexpressionContext shiftexpression(int _p) throws RecognitionException {
-		ParserRuleContext _parentctx = _ctx;
-		int _parentState = getState();
-		ShiftexpressionContext _localctx = new ShiftexpressionContext(_ctx, _parentState);
-		ShiftexpressionContext _prevctx = _localctx;
-		int _startState = 4;
-		enterRecursionRule(_localctx, 4, RULE_shiftexpression, _p);
+		ShiftexpressionContext _localctx = new ShiftexpressionContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_shiftexpression);
+		int _la;
 		try {
-			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			{
-			setState(29);
-			expression();
-			}
-			_ctx.stop = _input.LT(-1);
-			setState(36);
+			setState(28);
+			match(T__1);
+			setState(31); 
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,2,_ctx);
-			while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
-				if ( _alt==1 ) {
-					if ( _parseListeners!=null ) triggerExitRuleEvent();
-					_prevctx = _localctx;
-					{
-					{
-					_localctx = new ShiftexpressionContext(_parentctx, _parentState);
-					pushNewRecursionContext(_localctx, _startState, RULE_shiftexpression);
-					setState(31);
-					if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
-					setState(32);
-					match(T__1);
-					setState(33);
-					expression();
-					}
-					} 
+			_la = _input.LA(1);
+			do {
+				{
+				{
+				setState(29);
+				match(T__2);
+				setState(30);
+				expression();
 				}
-				setState(38);
+				}
+				setState(33); 
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,2,_ctx);
-			}
+				_la = _input.LA(1);
+			} while ( _la==T__2 );
 			}
 		}
 		catch (RecognitionException re) {
@@ -295,7 +262,7 @@ public class ShiftParser extends Parser {
 			_errHandler.recover(this, re);
 		}
 		finally {
-			unrollRecursionContexts(_parentctx);
+			exitRule();
 		}
 		return _localctx;
 	}
@@ -312,12 +279,9 @@ public class ShiftParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_expression; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ShiftListener ) ((ShiftListener)listener).enterExpression(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ShiftListener ) ((ShiftListener)listener).exitExpression(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ShiftVisitor ) return ((ShiftVisitor<? extends T>)visitor).visitExpression(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -325,7 +289,7 @@ public class ShiftParser extends Parser {
 		ExpressionContext _localctx = new ExpressionContext(_ctx, getState());
 		enterRule(_localctx, 6, RULE_expression);
 		try {
-			setState(41);
+			setState(37);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case Booleanliteral:
@@ -335,14 +299,14 @@ public class ShiftParser extends Parser {
 			case Characterliteral:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(39);
+				setState(35);
 				literal();
 				}
 				break;
 			case Identifer:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(40);
+				setState(36);
 				identifer();
 				}
 				break;
@@ -372,12 +336,9 @@ public class ShiftParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_literal; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ShiftListener ) ((ShiftListener)listener).enterLiteral(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ShiftListener ) ((ShiftListener)listener).exitLiteral(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ShiftVisitor ) return ((ShiftVisitor<? extends T>)visitor).visitLiteral(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -388,7 +349,7 @@ public class ShiftParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(43);
+			setState(39);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << Booleanliteral) | (1L << Integerliteral) | (1L << Floatingliteral) | (1L << Stringliteral) | (1L << Characterliteral))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -418,12 +379,9 @@ public class ShiftParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_identifer; }
 		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ShiftListener ) ((ShiftListener)listener).enterIdentifer(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ShiftListener ) ((ShiftListener)listener).exitIdentifer(this);
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ShiftVisitor ) return ((ShiftVisitor<? extends T>)visitor).visitIdentifer(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -433,7 +391,7 @@ public class ShiftParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(45);
+			setState(41);
 			match(Identifer);
 			}
 		}
@@ -452,8 +410,6 @@ public class ShiftParser extends Parser {
 		switch (ruleIndex) {
 		case 0:
 			return statementseq_sempred((StatementseqContext)_localctx, predIndex);
-		case 2:
-			return shiftexpression_sempred((ShiftexpressionContext)_localctx, predIndex);
 		}
 		return true;
 	}
@@ -464,28 +420,20 @@ public class ShiftParser extends Parser {
 		}
 		return true;
 	}
-	private boolean shiftexpression_sempred(ShiftexpressionContext _localctx, int predIndex) {
-		switch (predIndex) {
-		case 1:
-			return precpred(_ctx, 1);
-		}
-		return true;
-	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16\62\4\2\t\2\4\3"+
-		"\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\3\2\3\2\3\2\3\2\3\2\7\2\24\n\2\f"+
-		"\2\16\2\27\13\2\3\3\3\3\3\3\3\3\5\3\35\n\3\3\4\3\4\3\4\3\4\3\4\3\4\7\4"+
-		"%\n\4\f\4\16\4(\13\4\3\5\3\5\5\5,\n\5\3\6\3\6\3\7\3\7\3\7\2\4\2\6\b\2"+
-		"\4\6\b\n\f\2\3\5\2\5\5\b\t\f\r\2/\2\16\3\2\2\2\4\34\3\2\2\2\6\36\3\2\2"+
-		"\2\b+\3\2\2\2\n-\3\2\2\2\f/\3\2\2\2\16\17\b\2\1\2\17\20\5\4\3\2\20\25"+
-		"\3\2\2\2\21\22\f\3\2\2\22\24\5\4\3\2\23\21\3\2\2\2\24\27\3\2\2\2\25\23"+
-		"\3\2\2\2\25\26\3\2\2\2\26\3\3\2\2\2\27\25\3\2\2\2\30\35\7\3\2\2\31\32"+
-		"\5\6\4\2\32\33\7\3\2\2\33\35\3\2\2\2\34\30\3\2\2\2\34\31\3\2\2\2\35\5"+
-		"\3\2\2\2\36\37\b\4\1\2\37 \5\b\5\2 &\3\2\2\2!\"\f\3\2\2\"#\7\4\2\2#%\5"+
-		"\b\5\2$!\3\2\2\2%(\3\2\2\2&$\3\2\2\2&\'\3\2\2\2\'\7\3\2\2\2(&\3\2\2\2"+
-		"),\5\n\6\2*,\5\f\7\2+)\3\2\2\2+*\3\2\2\2,\t\3\2\2\2-.\t\2\2\2.\13\3\2"+
-		"\2\2/\60\7\6\2\2\60\r\3\2\2\2\6\25\34&+";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\17.\4\2\t\2\4\3\t"+
+		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\3\2\3\2\3\2\3\2\3\2\7\2\24\n\2\f\2"+
+		"\16\2\27\13\2\3\3\3\3\3\3\3\3\5\3\35\n\3\3\4\3\4\3\4\6\4\"\n\4\r\4\16"+
+		"\4#\3\5\3\5\5\5(\n\5\3\6\3\6\3\7\3\7\3\7\2\3\2\b\2\4\6\b\n\f\2\3\5\2\6"+
+		"\6\t\n\r\16\2+\2\16\3\2\2\2\4\34\3\2\2\2\6\36\3\2\2\2\b\'\3\2\2\2\n)\3"+
+		"\2\2\2\f+\3\2\2\2\16\17\b\2\1\2\17\20\5\4\3\2\20\25\3\2\2\2\21\22\f\3"+
+		"\2\2\22\24\5\4\3\2\23\21\3\2\2\2\24\27\3\2\2\2\25\23\3\2\2\2\25\26\3\2"+
+		"\2\2\26\3\3\2\2\2\27\25\3\2\2\2\30\35\7\3\2\2\31\32\5\6\4\2\32\33\7\3"+
+		"\2\2\33\35\3\2\2\2\34\30\3\2\2\2\34\31\3\2\2\2\35\5\3\2\2\2\36!\7\4\2"+
+		"\2\37 \7\5\2\2 \"\5\b\5\2!\37\3\2\2\2\"#\3\2\2\2#!\3\2\2\2#$\3\2\2\2$"+
+		"\7\3\2\2\2%(\5\n\6\2&(\5\f\7\2\'%\3\2\2\2\'&\3\2\2\2(\t\3\2\2\2)*\t\2"+
+		"\2\2*\13\3\2\2\2+,\7\7\2\2,\r\3\2\2\2\6\25\34#\'";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

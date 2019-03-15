@@ -4,7 +4,7 @@ statementseq: statement | statementseq statement;
 
 statement: ';' | shiftexpression ';';
 
-shiftexpression: expression | shiftexpression '<<' expression;
+shiftexpression: 'cout' ('<<' expression)+;
 
 expression: literal | identifer;
 
