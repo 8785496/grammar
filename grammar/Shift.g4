@@ -30,8 +30,10 @@ Nonzerodigit: [1-9];
 
 Digit: [0-9];
 
-Stringliteral: '"' ~["\\\r\n]* '"';
+Character: [a-zA-Z];
 
-Characterliteral: '\'' ~['\\\r\n] '\'';
+Stringliteral: '"' (Character | Digit | Whitespace)* '"';
+
+Characterliteral: '\'' Character '\'';
 
 Whitespace: [ \t\r\n]+ -> skip;

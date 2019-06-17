@@ -18,8 +18,8 @@ public class ShiftParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		T__0=1, T__1=2, T__2=3, Booleanliteral=4, Identifer=5, Identifernodigit=6, 
-		Integerliteral=7, Floatingliteral=8, Nonzerodigit=9, Digit=10, Stringliteral=11, 
-		Characterliteral=12, Whitespace=13;
+		Integerliteral=7, Floatingliteral=8, Nonzerodigit=9, Digit=10, Character=11, 
+		Stringliteral=12, Characterliteral=13, Whitespace=14;
 	public static final int
 		RULE_statementseq = 0, RULE_statement = 1, RULE_shiftexpression = 2, RULE_expression = 3, 
 		RULE_literal = 4, RULE_identifer = 5;
@@ -33,8 +33,8 @@ public class ShiftParser extends Parser {
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
 		null, null, null, null, "Booleanliteral", "Identifer", "Identifernodigit", 
-		"Integerliteral", "Floatingliteral", "Nonzerodigit", "Digit", "Stringliteral", 
-		"Characterliteral", "Whitespace"
+		"Integerliteral", "Floatingliteral", "Nonzerodigit", "Digit", "Character", 
+		"Stringliteral", "Characterliteral", "Whitespace"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -126,7 +126,7 @@ public class ShiftParser extends Parser {
 			setState(19);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,0,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+			while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
@@ -422,17 +422,17 @@ public class ShiftParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\17.\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\20.\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\3\2\3\2\3\2\3\2\3\2\7\2\24\n\2\f\2"+
 		"\16\2\27\13\2\3\3\3\3\3\3\3\3\5\3\35\n\3\3\4\3\4\3\4\6\4\"\n\4\r\4\16"+
 		"\4#\3\5\3\5\5\5(\n\5\3\6\3\6\3\7\3\7\3\7\2\3\2\b\2\4\6\b\n\f\2\3\5\2\6"+
-		"\6\t\n\r\16\2+\2\16\3\2\2\2\4\34\3\2\2\2\6\36\3\2\2\2\b\'\3\2\2\2\n)\3"+
-		"\2\2\2\f+\3\2\2\2\16\17\b\2\1\2\17\20\5\4\3\2\20\25\3\2\2\2\21\22\f\3"+
-		"\2\2\22\24\5\4\3\2\23\21\3\2\2\2\24\27\3\2\2\2\25\23\3\2\2\2\25\26\3\2"+
-		"\2\2\26\3\3\2\2\2\27\25\3\2\2\2\30\35\7\3\2\2\31\32\5\6\4\2\32\33\7\3"+
-		"\2\2\33\35\3\2\2\2\34\30\3\2\2\2\34\31\3\2\2\2\35\5\3\2\2\2\36!\7\4\2"+
-		"\2\37 \7\5\2\2 \"\5\b\5\2!\37\3\2\2\2\"#\3\2\2\2#!\3\2\2\2#$\3\2\2\2$"+
-		"\7\3\2\2\2%(\5\n\6\2&(\5\f\7\2\'%\3\2\2\2\'&\3\2\2\2(\t\3\2\2\2)*\t\2"+
+		"\6\t\n\16\17\2+\2\16\3\2\2\2\4\34\3\2\2\2\6\36\3\2\2\2\b\'\3\2\2\2\n)"+
+		"\3\2\2\2\f+\3\2\2\2\16\17\b\2\1\2\17\20\5\4\3\2\20\25\3\2\2\2\21\22\f"+
+		"\3\2\2\22\24\5\4\3\2\23\21\3\2\2\2\24\27\3\2\2\2\25\23\3\2\2\2\25\26\3"+
+		"\2\2\2\26\3\3\2\2\2\27\25\3\2\2\2\30\35\7\3\2\2\31\32\5\6\4\2\32\33\7"+
+		"\3\2\2\33\35\3\2\2\2\34\30\3\2\2\2\34\31\3\2\2\2\35\5\3\2\2\2\36!\7\4"+
+		"\2\2\37 \7\5\2\2 \"\5\b\5\2!\37\3\2\2\2\"#\3\2\2\2#!\3\2\2\2#$\3\2\2\2"+
+		"$\7\3\2\2\2%(\5\n\6\2&(\5\f\7\2\'%\3\2\2\2\'&\3\2\2\2(\t\3\2\2\2)*\t\2"+
 		"\2\2*\13\3\2\2\2+,\7\7\2\2,\r\3\2\2\2\6\25\34#\'";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
